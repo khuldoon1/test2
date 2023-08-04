@@ -45,9 +45,22 @@ export default function UserDetail() {
   }
 
 
-  const addComment=()=>[
+  const addComment=async(id,index)=>{
+    try{
+      let inputField=document.getElementById(`${index}`)
+      const body={
+        comment:inputField.value
+      }
+      await axios.post('https://jsonplaceholder.typicode.com/post/'+id,body).then((response)=>{
+      setUserPosts(response.data);
+      setLoadingPost(false)
+      })
+        }catch(error){
+         
+      
+        }
     alert("Comment Has Been Added")
-  ]
+  }
   return (
     <div className="App">
       <HeaderNavigation></HeaderNavigation>
@@ -77,15 +90,15 @@ export default function UserDetail() {
         <div>
 
   </div>
-      {!loadingPost&& userPosts.map((post)=>{
+      {!loadingPost&& userPosts.map((post,index)=>{
        return(
         <div className='bg-gray-900 border-gray-200 dark:bg-whit p-4 '>
         <p className='text-black text-left dark:text-white'> {post.id}</p>
         <h6 className='text-black text-left dark:text-white'>{post.title}</h6>
         <p className='text-black text-left dark:text-white'>{post.body}</p>
      <div class="flex gap-5 mt-4">
-     <input placeholder='Add Comment' class=" inline-block mr-4 bg-transparent  border border-blue-500 rounded px-3"></input>
-     <button onClick={()=>{addComment()}} class="text-white bg-blue-500 px-4 py-3 rounded-md">Add</button>
+     <input id={index} placeholder='Add Comment' class="dark:text-white inline-block mr-4 bg-transparent  border border-blue-500 rounded px-3"></input>
+     <button onClick={()=>{addComment(post.id,index)}} class="text-white bg-blue-500 px-4 py-3 rounded-md">Add</button>
       </div>
         </div>
 
