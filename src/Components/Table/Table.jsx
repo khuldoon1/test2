@@ -13,11 +13,11 @@ export default function Table({ users }) {
   );
 
   return (
-    <div class="relative overflow-x-auto">
-      <p className='bg-black border-b dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black'>{context.title}</p>
+    <div class="relative overflow-x-auto ">
+      <p className='bg-black border-b dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black text-center'>{context.title}</p>
       <div className='w-full'>
         <input
-        className='w-full'
+        className='w-full text-center'
           type="text"
           placeholder="Search by name or email"
           value={searchQuery}
