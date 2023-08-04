@@ -25,7 +25,7 @@ const fetchUsers=async()=>{
       }
 }
   return (
-    <div className="App">
+    <div className="">
 
 <HeaderNavigation></HeaderNavigation>
 
