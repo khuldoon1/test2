@@ -52,45 +52,46 @@ export default function UserDetail() {
     <div className="App">
       <HeaderNavigation></HeaderNavigation>
 {!loading &&
-      <div className='bg-white border-gray-200 dark:bg-gray-900 grid grid-cols-3 p-4'>
-          <h1 className='text-black dark:text-white text-left text-2xl' >User Detail</h1>
-      <div className='col-span-1 py-2'>
-      <h6 className='text-black dark:text-white'>Name:{userDetail.name?userDetail.name:''}</h6>
-      </div>
-      <div className='col-span-1 py-2'>
-      <h6 className='text-black dark:text-white'>Email:{userDetail.email?userDetail.email:''}</h6>
-      </div>
-      <div className='col-span-1 py-2'>
-      <h6 className='text-black dark:text-white'>Username:{userDetail.username?userDetail.username:''}</h6>
-      </div>
-      <div className='col-span-1 py-2'>
-      <h6 className='text-black dark:text-white'>Company:{userDetail.company.name?userDetail.company.name:''}</h6>
-      </div>
-      <div className='col-span-1 py-2'>
-      <h6 className='text-black dark:text-white'>Phone:{userDetail.phone?userDetail.phone:''}</h6>
-      </div>
-<div>
+      <div className='bg-white border-gray-200 dark:bg-gray-900 px-4'>
+        <h1 className=' text-black dark:text-white text-left text-2xl' >User Detail</h1>
+<div class="flex flex-col gap-3 ">
+    
+<h6 className='text-black dark:text-white'>Name:{userDetail.name?userDetail.name:''}</h6>
+     
+  
+     <h6 className='text-black dark:text-white'>Email:{userDetail.email?userDetail.email:''}</h6>
+    
+ 
+     <h6 className='text-black dark:text-white'>Username:{userDetail.username?userDetail.username:''}</h6>
+    
+ 
+     <h6 className='text-black dark:text-white'>Company:{userDetail.company.name?userDetail.company.name:''}</h6>
+    
+ 
+     <h6 className='text-black dark:text-white'>Phone:{userDetail.phone?userDetail.phone:''}</h6>
+
+  </div>
   <h1 className='text-black dark:text-white text-left text-2xl' >User Posts</h1>
+        </div>}
+
+        <div>
+
   </div>
       {!loadingPost&& userPosts.map((post)=>{
        return(
-        <div className='bg-gray-900 border-gray-200 dark:bg-whit py-4 '>
+        <div className='bg-gray-900 border-gray-200 dark:bg-whit p-4 '>
         <p className='text-black text-left dark:text-white'> {post.id}</p>
         <h6 className='text-black text-left dark:text-white'>{post.title}</h6>
         <p className='text-black text-left dark:text-white'>{post.body}</p>
-       <div class="flex flex-col justify-start">
-       <label className='text-black dark:text-white text-left'>Add Comment</label>
-        </div>
-     <div class="flex gap-5 ">
-     <input class="w-20 inline-block mr-4"></input>
-     <button onClick={()=>{addComment()}} class="text-white">Add</button>
+     <div class="flex gap-5 mt-4">
+     <input placeholder='Add Comment' class=" inline-block mr-4 bg-transparent  border border-blue-500 rounded px-3"></input>
+     <button onClick={()=>{addComment()}} class="text-white bg-blue-500 px-4 py-3 rounded-md">Add</button>
       </div>
         </div>
 
       
        )
       })}
-        </div>}
 
 
 <FooterNavigation></FooterNavigation>
