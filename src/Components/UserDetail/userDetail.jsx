@@ -92,7 +92,7 @@ export default function UserDetail() {
   </div>
       {!loadingPost&& userPosts.map((post,index)=>{
        return(
-        <div className='bg-gray-900 border-gray-200 dark:bg-whit p-4 '>
+        <div className='dark:bg-gray-900 bg-white border-gray-200  p-4 '>
         <p className='text-black text-left dark:text-white'> {post.id}</p>
         <h6 className='text-black text-left dark:text-white'>{post.title}</h6>
         <p className='text-black text-left dark:text-white'>{post.body}</p>
