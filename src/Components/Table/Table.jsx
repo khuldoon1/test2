@@ -13,7 +13,7 @@ export default function Table({ users }) {
 
   return (
     <div className="relative overflow-x-auto">
-      <p className='bg-black border-b dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black text-center'>{context.title}</p>
+      <p className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 dark:text-white text-black text-center'>{context.title}</p>
       <div className='w-full'>
         <input
           className='w-full text-center'
